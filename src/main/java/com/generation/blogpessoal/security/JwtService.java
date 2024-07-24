@@ -1,6 +1,5 @@
 package com.generation.blogpessoal.security;
 
-import java.awt.RenderingHints.Key;
 import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -46,6 +45,7 @@ public class JwtService {
 		return extractClaim(token, Claims::getExpiration);
 	}
 
+	@SuppressWarnings("deprecation")
 	private Boolean isTokenExpired(String token) {
 		return extractExpiration(token).before(new Date(0, 0, 0));
 	}
